@@ -42,10 +42,10 @@ static const int resizehints = 1;    /* 1 means respect size hints in tiled resi
 #include "horizgrid.c"
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
-	{ "><>",      NULL },    /* no layout function means floating behavior */
-	{ "[M]",      monocle },
-	{ "###",      horizgrid },
+	{ "###",      horizgrid }, /* first entry is default */
+        { "[M]",      monocle },
+        { "><>",      NULL },    /* no layout function means floating behavior */
+        { "[]=",      tile },
 };
 
 /* key definitions */
@@ -78,9 +78,10 @@ static Key keys[] = {
 	{ MODKEY,               36,    zoom,           {0} },             // Return
 	{ MODKEY,               23,    view,           {0} },             // Tab
 	{ MODKEY|ShiftMask,     54,    killclient,     {0} },             // c
-	{ MODKEY,               28,    setlayout,      {.v = &layouts[0]} }, // t
-	{ MODKEY,               41,    setlayout,      {.v = &layouts[1]} }, // f
-	{ MODKEY,               58,    setlayout,      {.v = &layouts[2]} }, // m
+	{ MODKEY,               42,    setlayout,      {.v = &layouts[0]} }, // g
+        { MODKEY,               41,    setlayout,      {.v = &layouts[1]} }, // f
+        { MODKEY,               58,    setlayout,      {.v = &layouts[2]} }, // m
+        { MODKEY,               28,    setlayout,      {.v = &layouts[3]} }, // t
 	{ MODKEY,               65,    setlayout,      {0} },             // space
 	{ MODKEY|ShiftMask,     65,    togglefloating, {0} },             // space
 	{ MODKEY,               19,    view,           {.ui = ~0 } },     // 0
